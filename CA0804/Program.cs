@@ -10,18 +10,12 @@ namespace CA0804
     {
         static void Main(string[] args)
         {
-            int tamanho = 5;
-            int[] lista = new int[tamanho];
-            int i;
-            for (i = 0; i < tamanho; i++)
-            {
-                Console.WriteLine("Digite um valor:");
-                lista[i] = int.Parse(Console.ReadLine());
-            }
-            for (i = 0; i < tamanho; i++)
-            {
-            Console.WriteLine("Valor:{0}", lista[i]);
-            }
+          Carro fusca = new Carro();
+
+            fusca.rodas[0] = new Roda();
+            fusca.rodas[0].cadastrar();
+            fusca.rodas[0].exibir();
+
         }
     }
 }
