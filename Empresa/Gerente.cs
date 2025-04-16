@@ -10,6 +10,11 @@ namespace Empresa
     {
         public string setor;
 
+
+        public void definirSetor(string setor)
+        {
+            this.setor = setor;
+        }
         public void salarioGerente(double sal)
         {
             if (sal > 2000 && sal < 4000)
@@ -17,6 +22,11 @@ namespace Empresa
                 this.salario = sal;
             }
 
+        }
+
+        public void exibirSetor()
+        {
+            Console.WriteLine("Setor: {0}",this.setor);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,9 @@ namespace Empresa
     class Funcionario : Pessoa
     {
         protected double salario;
-        public string cargo;
         public Pessoa[] dependentes = new Pessoa[5];
-        private string senha;
+        public int registro;
+        public string cargo;
 
         public Funcionario(string nome,double sal)
         {
@@ -26,7 +27,19 @@ namespace Empresa
             this.nome = nome;
         }
 
+        public void adicionarDependente(string nomeDependente)
+        {
+            this.dependentes[5] = new Pessoa();
+            this.dependentes[0].cadastrar();
 
+        }
+
+        public override void cadastrar()
+        {
+            base.cadastrar();
+            Console.WriteLine("Digite o registro: ");
+            this.registro = int.Parse(Console.ReadLine());
+        }
 
         public void registrarSalario(double sal)
         {
@@ -40,14 +53,11 @@ namespace Empresa
             }
         }
 
-        public void cadastrarSenha(string senha)
-        {
-            this.senha = senha;
-        }
-
         public void exibir()
         {
-            Console.WriteLine("Nome:{0}\nSalario:{1}",this.nome,this.salario);
+            Console.WriteLine("Registro:{0} \nNome:{1} Salario:{2} \n Dependentes: {3}",this.registro,this.nome,this.salario, this.dependentes[0]);
         }
+
+
     }
 }

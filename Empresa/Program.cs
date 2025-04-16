@@ -10,13 +10,15 @@ namespace Empresa
     {
         static void Main(string[] args)
         {
-            Funcionario f1 = new Funcionario("Zezinho",1000);
-            Funcionario f2 = new Funcionario("Huguinho");
-            Funcionario f3 = new Funcionario();
+           
+            ClienteVIP vip1 = new ClienteVIP();
+            vip1.criarCod("69");
+            Console.WriteLine(vip1.Cod_vip);
 
-            f1.exibir();
-            f2.exibir();
-            f3.exibir();
+            vip1.cadastrar();
+            vip1.exibirInfo();
+
+
         }
     }
 }
